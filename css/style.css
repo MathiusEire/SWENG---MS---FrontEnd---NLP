@@ -124,6 +124,9 @@ header a:hover{
 #boxes .box{
   float: left;
   text-align: center;
+  text-decoration: underline;
+  text: bold;
+  font-size: 20px;
   width: 30%;
   padding: 10px;
 
