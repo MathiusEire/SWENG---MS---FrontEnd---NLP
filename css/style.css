@@ -57,6 +57,7 @@ header li{
 }
 
 header #branding{
+  background: url('../images/logo.jpg./')no-repeat 0;
   float: left;
 }
 
