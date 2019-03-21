@@ -135,9 +135,8 @@ header a:hover{
 /* showcase */
 #showcase{
   min-height: 400px;
-  background: url('../images/logo.png')no-repeat 0 ;
+  background: url('../images/micro.jpeg')no-repeat 0 ;
   text-align: center;
-  -webkit-text-stroke: 3px black;
   color: white;
 }
 #showcase h1{
