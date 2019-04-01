@@ -32,6 +32,56 @@
         <div class="container">
           <h3> A Trinity College Project<h3>
         </div>
+        <div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="img_nature_wide.jpg" style="width:100%">
+  <div class="text">Caption Text</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="img_snow_wide.jpg" style="width:100%">
+  <div class="text">Caption Two</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="img_mountains_wide.jpg" style="width:100%">
+  <div class="text">Caption Three</div>
+</div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+</div>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
       </section>
 
       <section id="newsletter">
@@ -44,32 +94,119 @@
         </div>
       </section>
 
-      <section id="boxes">
+      <section id="main">
         <div class="container">
-          <div class="box">
-            <h3> Politics </h3>
-            <p> Articles loading...</p>
-          </div>
-          <div class="box">
-            <h3> Technology </h3>
-            <p> Articles loading...</p>
-          </div>
-          <div class="box">
-            <h3> Sport </h3>
-            <p> Articles loading...</p>
-          </div>
-          <div class="box">
-            <h3> Entertainment </h3>
-            <p> Articles loading...</p>
-          </div>
-          <div class="box">
-            <h3> Business </h3>
-            <p> Articles loading...</p>
-          </div>
-          <div class="box">
-            <h3> Fashion </h3>
-            <p> Articles loading...</p>
-          </div>
+          <article id="main-col">
+            <h2 class="page-title"> Articles</h2>
+            <ul id="Articles">
+
+                <!-- matthew -->
+                <div class="row">
+                  <div class="column">
+                    <div class="card">
+                      <img src="Matthew.jpg" alt="Matthew" style="width:100%">
+                      <div class="container">
+                        <h2>Matthew Armstrong</h2>
+                        <p class="title">Front-End Developer</p>
+
+                        <p>Marmstro@tcd.ie</p>
+                        <p><button class="button">Contact</button></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                  <!-- gabriel -->
+                  <div class="row">
+                    <div class="column">
+                      <div class="card">
+                        <img src="Gabriel.jpg" alt="Gabriel" style="width:100%">
+                        <div class="container">
+                          <h2>Gabriel Barat</h2>
+                          <p class="title">Head of Research</p>
+
+                          <p>baratg@tcd.ie</p>
+                          <p><button class="button">Contact</button></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                    <!-- Donal -->
+                    <div class="row">
+                      <div class="column">
+                        <div class="card">
+                          <img src="Donal.jpg" alt="Donal" style="width:100%">
+                          <div class="container">
+                            <h2>Donal Hoga</h2>
+                            <p class="title">Secretary</p>
+
+                            <p>hogand7@tcd.ie</p>
+                            <p><button class="button">Contact</button></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                      <!-- Theo -->
+                      <div class="row">
+                        <div class="column">
+                          <div class="card">
+                            <img src="Theo.jpg" alt="Theo" style="width:100%">
+                            <div class="container">
+                              <h2>Theo Barbu</h2>
+                              <p class="title">Backend Developer</p>
+
+                              <p>example@example.com</p>
+                              <p><button class="button">Contact</button></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                        <!-- Holly -->
+              <div class="row">
+                <div class="column">
+                    <div class="card">
+                        <img src="Holly.jpg" alt="Holly" style="width:100%">
+                            <div class="container">
+                            <h2>Holly Baker</h2>
+                            <p class="title">Backend Developer</p>
+
+                            <p>example@example.com</p>
+                            <p><button class="button">Contact</button></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                          <!-- Nissi -->
+              <div class="row">
+                <div class="column">
+                  <div class="card">
+                    <img src="Nissi.jpg" alt="Nissimol" style="width:100%">
+                      <div class="container">
+                        <h2>Nissimol Aji</h2>
+                        <p class="title">Backend Developer</p>
+
+                        <p>example@example.com</p>
+                        <p><button class="button">Contact</button></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+            </ul>
+
+          </article>
+          <aside id="sidebar">
+            <div class="dark">
+            <h3> What we're trying to accomplish:  </h3>
+            <p>The aim of this project is to create a natural language processing algorithm which creates
+              a well structured summary of a larger text document <br/>(In this case BBC articles)
+              and displays said summary correctly</p>
+            </div>
+          </aside>
         </div>
       </section>
       <footer>
