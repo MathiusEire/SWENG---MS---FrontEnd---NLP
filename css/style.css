@@ -6,9 +6,9 @@ body{
   background-color: #f4f4f4;
 }
 .custom-search {
-	position: absolute;
+	position:  absolute;
 	right: 20px;
-	top: 1px;
+	top: 11px;
 }
 #express-form-typeahead {
 	background-color: transparent;
@@ -34,7 +34,7 @@ body{
 	width: 230px;
 }
 .search-btn {
-  display: none;
+  display: inline-grid;
 }
 input[type="search"] {
   -webkit-appearance: textfield;
@@ -147,11 +147,11 @@ header a:hover{
   display: table;
 }
 .search input[type=text]{
-  float: right;
-  padding: 6px;
+  float: left;
+  padding: 10px;
   border: none;
-  margin-top: 8px;
-  margin-right: 16px;
+  margin-top: 0px;
+  margin-left: 16px;
   font-size: 17px;
 }
 .title {
@@ -207,11 +207,7 @@ header a:hover{
 
   }
 
-  #newsletter input[type="email"]{
-    padding: 4px;
-    height: 25px;
-    width: 250px;
-  }
+
 /*boxes */
 #boxes{
   margin-top: 20px;
