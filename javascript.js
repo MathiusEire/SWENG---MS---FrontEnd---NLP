@@ -1,3 +1,5 @@
-$('.search-button').click(function(){
-  $(this).parent().toggleClass('open');
-});
+function readfile(){
+    jQuery.get('sport.txt',function(txt) ){
+      $('#output').text(txt);
+    });
+}
