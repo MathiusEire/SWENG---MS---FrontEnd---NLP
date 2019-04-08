@@ -24,11 +24,11 @@
                 <li class="dropdown">
                   <a href="javascript:void(0)" class="dropbtn">Topics</a>
                   <div class="dropdown-content">
-                    <a class="current" href="Topics.html">Business</a>
-                    <a class="current" href="Topics.html">Entertainment</a>
-                    <a class="current" href="Topics.html">Politics</a>
-                    <a class="current" href="Topics.html">Sport</a>
-                    <a class="current" href="Topics.html">Technology</a>
+                    <a class="current" href="Topics.php">Business</a>
+                    <a class="current" href="Topics.php">Entertainment</a>
+                    <a class="current" href="Topics.php">Politics</a>
+                    <a class="current" href="Topics.php">Sport</a>
+                    <a class="current" href="Topics.php">Technology</a>
                   </div>
                   </li>
               </ul>
