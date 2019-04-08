@@ -65,7 +65,7 @@
       	    }
         }
         
-        getArticle($title){
+        function getArticle($title){
             $serverName = "text-sum-server.database.windows.net";
             $connectionOptions = array(
               "Uid" => "Group1",
