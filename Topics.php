@@ -40,6 +40,6 @@
 
       <a href="#" class="previous">&laquo; Load last 10</a>
       <a href="#" class="next">Load Next 10 &raquo;</a>
-      <?php echo "chicken"; ?>
+      <?php echo topicQuery(0, 'Business'); ?>
 
-</body>
+  </body>
