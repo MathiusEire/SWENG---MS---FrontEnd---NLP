@@ -12,7 +12,7 @@
   <body >
       <header>
         <div class=container">
-            <div class="logo"><a href ="#"><img src = "logo.png">
+            <div class="logo"><img src = "logo.png">
             <div id="branding">
               <h1><span class="highlight">Microsoft</span> MNLPA</h1>
             </div>
@@ -38,8 +38,36 @@
 
       </header>
 
+      <?php
+        function topicquery($topic, $offset){
+          //Data Source=tcp:text-sum-server.database.windows.net,1433;Initial Catalog=NLP_Database;User ID=Group1;Password=1234567a!
+          $serverName = "text-sum-server.database.windows.net";
+          $connectionOptions = array(
+            "Uid" => "Group1",
+            "PWD" => "1234567a!",
+            "Database" => "NLP_Database"
+          );
+    	     // Create connection
+    	    $conn = sqlsrv_connect($serverName, $connectionOptions);
+    	     // Check connection
+            $sql = "SELECT * FROM summarized_articles WHERE Topic='" . $topic ."' ORDER BY Title asc;";
+      	    $result = sqlsrv_query($conn, $sql);
+            if ($result == FALSE){
+              echo "Query issue. <br>";
+            }
+      	    else{
+      		     // output data of each row
+      		     while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)) {
+      			      echo "Title: " . $row["Title"] . "<br>";
+      		     }
+               sqlsrv_free_stmt($result);
+      	    }
+        }
+        
+        topicQuery("Business", 5);
+       ?>
+      
       <a href="#" class="previous">&laquo; Load last 10</a>
       <a href="#" class="next">Load Next 10 &raquo;</a>
-      <?php echo topicQuery(0, 'Business'); ?>
-
+      
   </body>
