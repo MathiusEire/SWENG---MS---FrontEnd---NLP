@@ -60,6 +60,7 @@
 
         <h1> Sport </h1>
           <div style="height:200px;width:400px;overflow:auto;border:8px solid #e8491d;padding:2%">
+            <? firsts("Sport"); ?>
           </div>
 
         <button class="collapsible">Summary</button>
@@ -69,6 +70,7 @@
 
         <h1> Politics </h1>
           <div style="height:200px;width:400px;overflow:auto;border:8px solid #e8491d;padding:2%">
+            <? firsts("Politics"); ?>
           </div>
         <button class="collapsible">Summary</button>
         <div class="content">
@@ -77,6 +79,7 @@
 
         <h1> Business </h1>
         <div style="height:200px;width:400px;overflow:auto;border:8px solid #e8491d;padding:2%">
+          <? firsts("Business"); ?>
         </div>
         <button class="collapsible">Summary</button>
         <div class="content">
@@ -85,6 +88,7 @@
 
         <h1> Technology </h1>
         <div style="height:200px;width:400px;overflow:auto;border:8px solid #e8491d;padding:2%">
+          <? firsts("Technology"); ?>
         </div>
         <button class="collapsible">Summary</button>
         <div class="content">
@@ -93,6 +97,7 @@
 
         <h1> Entertainment </h1>
         <div style="height:200px;width:400px;overflow:auto;border:8px solid #e8491d;padding:2%">
+          <? firsts("Entertainment"); ?>
         </div>
         <button class="collapsible">Summary</button>
         <div class="content">
@@ -122,3 +127,27 @@
       </footer>
   </body>
 </html>
+
+<?php
+  function firsts($topic){
+     //Data Source=tcp:text-sum-server.database.windows.net,1433;Initial Catalog=NLP_Database;User ID=Group1;Password=1234567a!
+     $serverName = "text-sum-server.database.windows.net";
+     $connectionOptions = array(
+      "Uid" => "Group1",
+      "PWD" => "1234567a!",
+      "Database" => "NLP_Database"
+     );
+     // Create connection
+     $conn = sqlsrv_connect($serverName, $connectionOptions);
+     // Check connection
+     $sql = "SELECT Title, Content FROM summarized_articles WHERE Topic='" . $topic . "' ORDER BY Title asc;";
+     $result = sqlsrv_query($conn, $sql);
+     if ($result == FALSE){
+      echo "Query issue. <br>";
+     }
+     else{
+      $row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC);
+      echo "Title: " . $row["Title"] . "<br> Summary: " . $row["Content"] . "<br>";
+     }
+  }
+?>
