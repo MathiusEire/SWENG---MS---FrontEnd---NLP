@@ -57,11 +57,34 @@
             }
       	    else{
       		     // output data of each row
-      		     while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)) {
+      		     for($x = 0; $row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC) and $x < 5; $x++) {
       			      echo "Title: " . $row["Title"] . "<br>";
+                  getArticle($row["Title"]);
       		     }
                sqlsrv_free_stmt($result);
       	    }
+        }
+        
+        getArticle($title){
+            $serverName = "text-sum-server.database.windows.net";
+            $connectionOptions = array(
+              "Uid" => "Group1",
+              "PWD" => "1234567a!",
+              "Database" => "NLP_Database"
+            );
+            // Create connection
+      	    $conn = sqlsrv_connect($serverName, $connectionOptions);
+      	    // Check connection
+            $sql = "SELECT * FROM test_table WHERE Title='" . $title ."';";
+        	  $result = sqlsrv_query($conn, $sql);
+            if ($result == FALSE){
+              echo "Query issue. <br>";
+            }
+        	  else{
+              $row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC);
+      			  echo "Article: " . $row["Article"] . "<br>";
+      		  }
+            sqlsrv_free_stmt($result);
         }
         
         topicQuery("Business", 5);
