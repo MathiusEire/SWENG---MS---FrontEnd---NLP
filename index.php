@@ -60,7 +60,7 @@
 
         <h1> Sport </h1>
           <div style="height:200px;width:400px;overflow:auto;border:8px solid #e8491d;padding:2%">
-            <? firsts("Sport"); ?>
+            <? firsts("Sports"); ?>
           </div>
 
         <button class="collapsible">Summary</button>
@@ -88,7 +88,7 @@
 
         <h1> Technology </h1>
         <div style="height:200px;width:400px;overflow:auto;border:8px solid #e8491d;padding:2%">
-          <? firsts("Technology"); ?>
+          <? firsts("Tech"); ?>
         </div>
         <button class="collapsible">Summary</button>
         <div class="content">
