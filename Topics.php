@@ -25,10 +25,10 @@
                   <a href="javascript:void(0)" class="dropbtn">Topics</a>
                   <div class="dropdown-content">
                     <a class="current" href="Topics.php">Business</a>
-                    <a class="current" href="Topics.php">Entertainment</a>
+                    <a class="current" href="Topics.php">Entertainment </a>
                     <a class="current" href="Topics.php">Politics</a>
-                    <a class="current" href="Topics.php">Sport</a>
-                    <a class="current" href="Topics.php">Technology</a>
+                    <a class="current" href="Topics.php">Sport </a>
+                    <a class="current" href="Topics.php">Technology </a>
                   </div>
                   </li>
               </ul>
@@ -57,7 +57,7 @@
             }
       	    else{
       		     // output data of each row
-      		     for($x = 1; $row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC) and $x < $offset + 5; $x++) {
+      		     for($x = 0; $row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC) and $x < $offset + 5; $x++) {
                  if($x >= $offset){
         			      echo "<br>Title: " . $row["Title"] . "<br> Summary: " . $row["Content"] . " <br>";
                     //getArticle($row["Title"]);
@@ -67,29 +67,7 @@
                sqlsrv_free_stmt($result);
       	    }
         }
-        topicQuery("Business", 5);
-        
-        // function getArticle($title){
-        //     $serverName = "text-sum-server.database.windows.net";
-        //     $connectionOptions = array(
-        //       "Uid" => "Group1",
-        //       "PWD" => "1234567a!",
-        //       "Database" => "NLP_Database"
-        //     );
-        //     // Create connection
-      	//     $conn = sqlsrv_connect($serverName, $connectionOptions);
-      	//     // Check connection
-        //     $sql = "SELECT * FROM table_name WHERE title='" . $title ."';";
-        // 	  $result = sqlsrv_query($conn, $sql);
-        //     if ($result == FALSE){
-        //       echo "Query issue or no result found. <br>";
-        //     }
-        // 	  else{
-        //       $row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC);
-      	// 		  echo "Article: " . $row["content"] . "<br>";
-      	// 	  }
-        //     sqlsrv_free_stmt($result);
-        // }
+        topicQuery("Business", 0);
         
        ?>
       

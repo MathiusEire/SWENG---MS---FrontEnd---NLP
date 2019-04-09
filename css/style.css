@@ -39,7 +39,7 @@ body{
 input[type="search"] {
   -webkit-appearance: textfield;
 }
-/*Glabal */
+/*Global */
 a {
   text-decoration: none;
   display: inline-block;
@@ -57,7 +57,7 @@ a:hover {
 }
 
 .next {
-  background-color: #4CAF50;
+  background-color: #333;
   color: white;
 }
 
