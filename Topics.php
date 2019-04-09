@@ -59,10 +59,11 @@
       		     // output data of each row
       		     for($x = 1; $row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC) and $x < $offset + 5; $x++) {
                  if($x >= $offset){
-        			      echo "Title: " . $row["Title"] . "<br> Summary: " . $row["Content"] . " <br>";
+        			      echo "<br>Title: " . $row["Title"] . "<br> Summary: " . $row["Content"] . " <br>";
                     //getArticle($row["Title"]);
                  }
       		     }
+               echo "<br>";
                sqlsrv_free_stmt($result);
       	    }
         }
