@@ -60,7 +60,7 @@
 
         <h1> Sport </h1>
           <div style="height:200px;width:400px;overflow:auto;border:8px solid #e8491d;padding:2%">
-
+            <? firstArticle("Sport"); ?>
           </div>
 
         <button class="collapsible">Summary</button>
@@ -71,7 +71,7 @@
 
         <h1> Politics </h1>
           <div style="height:200px;width:400px;overflow:auto;border:8px solid #e8491d;padding:2%">
-            
+            <? firstArticle("Politics"); ?>
           </div>
         <button class="collapsible">Summary</button>
         <div class="content">
@@ -80,7 +80,7 @@
 
         <h1> Business </h1>
         <div style="height:200px;width:400px;overflow:auto;border:8px solid #e8491d;padding:2%">
-          
+          <? firstArticle("Business"); ?>
         </div>
         <button class="collapsible">Summary</button>
         <div class="content">
@@ -89,7 +89,7 @@
 
         <h1> Technology </h1>
         <div style="height:200px;width:400px;overflow:auto;border:8px solid #e8491d;padding:2%">
-          
+          <? firstArticle("Tech"); ?>
         </div>
         <button class="collapsible">Summary</button>
         <div class="content">
@@ -98,7 +98,7 @@
 
         <h1> Entertainment </h1>
         <div style="height:200px;width:400px;overflow:auto;border:8px solid #e8491d;padding:2%">
-          
+          <? firstArticle("Entertainment"); ?>
         </div>
         <button class="collapsible">Summary</button>
         <div class="content">
@@ -131,7 +131,6 @@
 
 <?php
   function firstSummary($topic){
-     //Data Source=tcp:text-sum-server.database.windows.net,1433;Initial Catalog=NLP_Database;User ID=Group1;Password=1234567a!
      $serverName = "text-sum-server.database.windows.net";
      $connectionOptions = array(
       "Uid" => "Group1",
@@ -153,7 +152,6 @@
   }
   
   function firstArticle($topic){
-     //Data Source=tcp:text-sum-server.database.windows.net,1433;Initial Catalog=NLP_Database;User ID=Group1;Password=1234567a!
      $serverName = "text-sum-server.database.windows.net";
      $connectionOptions = array(
       "Uid" => "Group1",

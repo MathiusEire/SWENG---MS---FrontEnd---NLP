@@ -1,3 +1,4 @@
+<? $index = 0; ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -39,8 +40,8 @@
       </header>
 
       <?php
-        function topicquery($topic, $offset){
-          //Data Source=tcp:text-sum-server.database.windows.net,1433;Initial Catalog=NLP_Database;User ID=Group1;Password=1234567a!
+        
+        function topicquery($offset){
           $serverName = "text-sum-server.database.windows.net";
           $connectionOptions = array(
             "Uid" => "Group1",
@@ -50,7 +51,7 @@
     	     // Create connection
     	    $conn = sqlsrv_connect($serverName, $connectionOptions);
     	     // Check connection
-            $sql = "SELECT * FROM summarized_articles WHERE Topic='" . $topic ."' ORDER BY Title asc;";
+            $sql = "SELECT * FROM summarized_articles WHERE Topic='Business' ORDER BY Title asc;";
       	    $result = sqlsrv_query($conn, $sql);
             if ($result == FALSE){
               echo "Query issue. <br>";
@@ -67,11 +68,11 @@
                sqlsrv_free_stmt($result);
       	    }
         }
-        topicQuery("Business", 0);
+        topicQuery($index);
         
        ?>
       
-      <a href="#" class="previous">&laquo; Load last 10</a>
-      <a href="#" class="next">Load Next 10 &raquo;</a>
+      <a href="#" class="previous">&laquo; Load last 5</a>
+      <a href="#" class="next">Load Next 5 &raquo;</a>
       
   </body>

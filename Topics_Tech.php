@@ -39,7 +39,7 @@
       </header>
 
       <?php
-        function topicquery($topic, $offset){
+        function topicquery($offset){
           //Data Source=tcp:text-sum-server.database.windows.net,1433;Initial Catalog=NLP_Database;User ID=Group1;Password=1234567a!
           $serverName = "text-sum-server.database.windows.net";
           $connectionOptions = array(
@@ -50,7 +50,7 @@
     	     // Create connection
     	    $conn = sqlsrv_connect($serverName, $connectionOptions);
     	     // Check connection
-            $sql = "SELECT * FROM summarized_articles WHERE Topic='" . $topic ."' ORDER BY Title asc;";
+            $sql = "SELECT * FROM summarized_articles WHERE Topic='Tech' ORDER BY Title asc;";
       	    $result = sqlsrv_query($conn, $sql);
             if ($result == FALSE){
               echo "Query issue. <br>";
@@ -67,7 +67,7 @@
                sqlsrv_free_stmt($result);
       	    }
         }
-        topicQuery("Business", 0);
+        topicQuery(0);
         
        ?>
       
