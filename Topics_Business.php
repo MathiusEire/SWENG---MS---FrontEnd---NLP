@@ -8,6 +8,9 @@
       <meta name="keywords" content="natural language processing, microsoft project, college project , web-design, front end">
       <meta name="author" content="Microsoft Group 1"
       <title> M N L P A |Topics</title>
+      <script src="https//:ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"</script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
       <link rel="stylesheet" href="./css/style.css">
   </head>
   <body >
@@ -40,7 +43,7 @@
       </header>
 
       <?php
-        
+        $offset=0;
         function topicquery($offset){
           $serverName = "text-sum-server.database.windows.net";
           $connectionOptions = array(
@@ -60,19 +63,28 @@
       		     // output data of each row
       		     for($x = 0; $row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC) and $x < $offset + 5; $x++) {
                  if($x >= $offset){
-        			      echo "<br>Title: " . $row["Title"] . "<br> Summary: " . $row["Content"] . " <br>";
-                    //getArticle($row["Title"]);
+        			      echo "<br>Title: " . $row["Title"] . "<br> Article: " . $row["original"] . "<br> Summary: " . $row["Content"] . " <br>";
                  }
       		     }
+               $offset+=5;
                echo "<br>";
                sqlsrv_free_stmt($result);
       	    }
         }
+        
         topicQuery($index);
         
        ?>
       
-      <a href="#" class="previous">&laquo; Load last 5</a>
-      <a href="#" class="next">Load Next 5 &raquo;</a>
-      
+      <a href="" class="previous" onclick="previous5">&laquo; Load last 5</a>
+      <a href="" class="next" onclick="next5">Load Next 5 &raquo;</a>
+      <script>
+        int index=0;
+          function next5(){
+          index=index+5;
+          } 
+          function previous5(){
+          index=index-5;
+          }
+      </script>
   </body>
