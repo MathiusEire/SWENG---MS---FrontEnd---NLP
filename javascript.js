@@ -1,7 +1,7 @@
-var index=0;
+var offset=0;
 function next5(){
-    index=index+5;
+    offset=offset+5;
 }
 function previous5(){
-    index=index-5;
+    offset=offset-5;
 }

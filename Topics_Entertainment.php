@@ -25,7 +25,7 @@
                   <a href="javascript:void(0)" class="dropbtn">Topics</a>
                   <div class="dropdown-content">
                     <a href="Topics_Business.php">Business</a>
-                    <a href="Topics_Entertainment.php">Entertainment></a>
+                    <a href="Topics_Entertainment.php">Entertainment</a>
                     <a href="Topics_Politics.php">Politics</a>
                     <a href="Topics_Sport.php">Sport</a>
                     <a href="Topics_Tech.php">Technology</a>
@@ -38,9 +38,10 @@
 
       </header>
 
+            <div class="container">
+        <h1> Entertainment </h1>
       <?php
         function topicquery($offset){
-          //Data Source=tcp:text-sum-server.database.windows.net,1433;Initial Catalog=NLP_Database;User ID=Group1;Password=1234567a!
           $serverName = "text-sum-server.database.windows.net";
           $connectionOptions = array(
             "Uid" => "Group1",
@@ -57,21 +58,22 @@
             }
       	    else{
       		     // output data of each row
-      		     for($x = 0; $row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC) and $x < $offset + 5; $x++) {
+      		     for($x = 0; $row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC) and $x < $offset + 100; $x++) {
                  if($x >= $offset){
-        			      echo "<br>Title: " . $row["Title"] . "<br> Summary: " . $row["Content"] . " <br>";
-                    //getArticle($row["Title"]);
+        			      echo  "<strong> <br>Title: </strong>" . $row["Title"] . "<br> Article: " . $row["original"] . "<br><br><strong> Summary: </strong> " . $row["Content"] . " <br><br> __________________________________________________";
                  }
       		     }
+               $offset+=5;
                echo "<br>";
                sqlsrv_free_stmt($result);
       	    }
         }
-        topicQuery(0);
+        
+        echo(topicQuery(0))
         
        ?>
       
-      <a href="#" class="previous">&laquo; Load last 10</a>
-      <a href="#" class="next">Load Next 10 &raquo;</a>
-      
+      <a href="" class="previous" onclick="previous5">&laquo; Load last 5</a>
+      <a href="" class="next" onclick="next5">Load Next 5 &raquo;</a>
+      </div>
   </body>

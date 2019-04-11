@@ -1,4 +1,4 @@
-<? $index = 0; ?>
+<? $offset =0 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -8,9 +8,6 @@
       <meta name="keywords" content="natural language processing, microsoft project, college project , web-design, front end">
       <meta name="author" content="Microsoft Group 1"
       <title> M N L P A |Topics</title>
-      <script src="https//:ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"</script>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
       <link rel="stylesheet" href="./css/style.css">
   </head>
   <body >
@@ -29,7 +26,7 @@
                   <a href="javascript:void(0)" class="dropbtn">Topics</a>
                   <div class="dropdown-content">
                     <a href="Topics_Business.php">Business</a>
-                    <a href="Topics_Entertainment.php">Entertainment></a>
+                    <a href="Topics_Entertainment.php">Entertainment</a>
                     <a href="Topics_Politics.php">Politics</a>
                     <a href="Topics_Sport.php">Sport</a>
                     <a href="Topics_Tech.php">Technology</a>
@@ -41,9 +38,13 @@
             </div>
 
       </header>
-
-      <?php
-        $offset=0;
+      <div class="container">
+        <h1> Business </h1>
+        <div class = "writeHere">
+       <?php
+         //$offset = 0;
+        //echo(topicquery($offset));
+         
         function topicquery($offset){
           $serverName = "text-sum-server.database.windows.net";
           $connectionOptions = array(
@@ -63,7 +64,7 @@
       		     // output data of each row
       		     for($x = 0; $row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC) and $x < $offset + 5; $x++) {
                  if($x >= $offset){
-        			      echo "<br>Title: " . $row["Title"] . "<br> Article: " . $row["original"] . "<br> Summary: " . $row["Content"] . " <br>";
+        			      echo  "<strong> <br>Title: </strong>" . $row["Title"] . "<br> Article: " . $row["original"] . "<br><br><strong> Summary: </strong> " . $row["Content"] . " <br><br> __________________________________________________";
                  }
       		     }
                $offset+=5;
@@ -72,19 +73,38 @@
       	    }
         }
         
-        topicQuery($index);
         
        ?>
-      
-      <a href="" class="previous" onclick="previous5">&laquo; Load last 5</a>
-      <a href="" class="next" onclick="next5">Load Next 5 &raquo;</a>
-      <script>
-        int index=0;
-          function next5(){
-          index=index+5;
-          } 
-          function previous5(){
-          index=index-5;
-          }
+      </div>
+      <button type = "button" id="prev">Load Last 5</button>
+      <button type = "button" id="next">Load Next 5</button>
+        <script>
+        document.getElementById("prev").onclick=function(){
+        var myDiv = document.getElementById("writeHere");
+        myDiv.InnerHTML="";
+        myDiv.InnerHTML=" <?php topicquery(0); ?>";
+        };
       </script>
+      <script>
+        document.getElementById("next").onclick=function(){
+        var myDiv = document.getElementById("writeHere");
+        myDiv.InnerHTML="";
+        myDiv.InnerHTML=" <?php topicquery(5); ?>";
+        };
+      </script>
+       <!--<script class ="nextID">
+        function nextID(){
+        var myDiv = document.getElementById("writeHere");
+        myDiv.InnerHTML="";
+        myDiv.InnerHTML=" <?php topicquery(5); ?>";
+        };
+        </script>
+        <script class ="prevID">
+        function prevID(){
+        var myDiv = document.getElementById("writeHere");
+        myDiv.InnerHTML=" <?php topicquery(0); ?>";
+        };
+      </script>-->
+      </div>
+
   </body>

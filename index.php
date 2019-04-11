@@ -19,14 +19,14 @@
             </div>
             <nav>
               <ul>
-                <li class="current"><a href="index.html">Home</a></li>
+                <li class="current"><a href="index.php">Home</a></li>
                 <li><a href="About.html">About</a></li>
                 <li><a href="Services.html">Services/Upload</a></li>
                 <li class="dropdown">
                   <a href="javascript:void(0)" class="dropbtn">Topics</a>
                   <div class="dropdown-content">
                     <a href="Topics_Business.php">Business</a>
-                    <a href="Topics_Entertainment.php">Entertainment></a>
+                    <a href="Topics_Entertainment.php">Entertainment</a>
                     <a href="Topics_Politics.php">Politics</a>
                     <a href="Topics_Sport.php">Sport</a>
                     <a href="Topics_Tech.php">Technology</a>
@@ -38,7 +38,7 @@
             </div>
 
       </header>
-
+                                                                 
       <section id="showcase">
         <div class="container">
           <h3> A Trinity College Project<h3>
