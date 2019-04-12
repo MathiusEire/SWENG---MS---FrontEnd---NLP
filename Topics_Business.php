@@ -86,13 +86,13 @@
         function nextID(){
           var myDiv = document.getElementById("writeHere");
           myDiv.InnerHTML="";
-          myDiv.InnerHTML=" <?php topicquery(5); ?>";
+          myDiv.InnerHTML=" ";
           };
         </script>
         <script class ="prevID">
           function prevID(){
           var myDiv = document.getElementById("writeHere");
-          myDiv.InnerHTML=" <?php topicquery(0); ?>";
+          myDiv.InnerHTML=" ";
         };
       </script>-->
       </div>
