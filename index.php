@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-      <meta charset="utf-8">
+      <meta charset="ANSI">
       <meta name="viewport" content="width=device-width">
       <meta name="description" content="An attempt at natural language processing no judge plz">
       <meta name="keywords" content="natural language processing, microsoft project, college project , web-design, front end">
@@ -21,7 +21,7 @@
               <ul>
                 <li class="current"><a href="index.php">Home</a></li>
                 <li><a href="About.html">About</a></li>
-                <li><a href="Services.html">Services/Upload</a></li>
+                <li><a href="Services.html">Services</a></li>
                 <li class="dropdown">
                   <a href="javascript:void(0)" class="dropbtn">Topics</a>
                   <div class="dropdown-content">
@@ -46,13 +46,8 @@
       </section>
 
       <section id="newsletter">
-        <div class="container">
-          <h1>Search BBC Archives</h1>
-          <div class="search">
-              <input type="text" placeholder="Enter keywords...">
-          </div>
-            <button type="submit" class="button_1">Search</button>
-        </div>
+        <!--<div class="container">
+          <h1>Search BBC Archives</h1>-->
       </section>
 
       <section id="boxes">

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-      <meta charset="utf-8">
+      <meta charset="ANSI">
       <meta name="viewport" content="width=device-width">
       <meta name="description" content="An attempt at natural language processing no judge plz">
       <meta name="keywords" content="natural language processing, microsoft project, college project , web-design, front end">
@@ -21,7 +21,7 @@
               <ul>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="About.html">About</a></li>
-                <li><a href="Services.html">Services/Upload</a></li>
+                <li><a href="Services.html">Services</a></li>
                 <li class="dropdown">
                   <a href="javascript:void(0)" class="dropbtn">Topics</a>
                   <div class="dropdown-content">
@@ -45,7 +45,7 @@
          //$offset = 0;
         //echo(topicquery($offset));
          
-        function topicquery($offset){
+        function topicquery(){
           $serverName = "text-sum-server.database.windows.net";
           $connectionOptions = array(
             "Uid" => "Group1",
@@ -62,10 +62,8 @@
             }
       	    else{
       		     // output data of each row
-      		     for($x = 0; $row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC) and $x < $offset + 5; $x++) {
-                 if($x >= $offset){
+      		     while($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)) {
         			      echo  "<strong> <br>Title: </strong>" . $row["Title"] . "<br> Article: " . $row["original"] . "<br><br><strong> Summary: </strong> " . $row["Content"] . " <br><br> __________________________________________________";
-                 }
       		     }
                $offset+=5;
                echo "<br>";
@@ -73,36 +71,28 @@
       	    }
         }
         
+        topicquery();
+        
         
        ?>
       </div>
-      <button type = "button" id="prev">Load Last 5</button>
-      <button type = "button" id="next">Load Next 5</button>
-        <script>
-        document.getElementById("prev").onclick=function(){
-        var myDiv = document.getElementById("writeHere");
-        myDiv.InnerHTML="";
-        myDiv.InnerHTML=" <?php topicquery(0); ?>";
-        };
-      </script>
-      <script>
-        document.getElementById("next").onclick=function(){
-        var myDiv = document.getElementById("writeHere");
-        myDiv.InnerHTML="";
-        myDiv.InnerHTML=" <?php topicquery(5); ?>";
-        };
-      </script>
-       <!--<script class ="nextID">
+      <!--<button type = "button" id="prev">Load Last 5</button>
+      <button type = "button" id="next">Load Next 5</button>-->
+      
+      <!--<a href="" class="previous" onclick="prevID()">&laquo; Load last 5</a>
+      <a href="" class="next" onclick="nextID()">Load Next 5 &raquo;</a>
+
+       <script class ="nextID">
         function nextID(){
-        var myDiv = document.getElementById("writeHere");
-        myDiv.InnerHTML="";
-        myDiv.InnerHTML=" <?php topicquery(5); ?>";
-        };
+          var myDiv = document.getElementById("writeHere");
+          myDiv.InnerHTML="";
+          myDiv.InnerHTML=" <?php topicquery(5); ?>";
+          };
         </script>
         <script class ="prevID">
-        function prevID(){
-        var myDiv = document.getElementById("writeHere");
-        myDiv.InnerHTML=" <?php topicquery(0); ?>";
+          function prevID(){
+          var myDiv = document.getElementById("writeHere");
+          myDiv.InnerHTML=" <?php topicquery(0); ?>";
         };
       </script>-->
       </div>
